@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dollar Express</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Dollar Express</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="showSection('inicio')">Inicio</a>
+    <a href="#" onclick="showSection('productos')">Productos</a>
+    <a href="#" onclick="showSection('carrito')">Carrito</a>
+    <a href="#" onclick="showSection('contacto')">Contacto</a>
+  </nav>
+
+  <section id="inicio" class="section active">
+    <h2>Bienvenido a Dollar Express</h2>
+    <p>Presentación de productos. (Un video rapido de algunos productos).</p>
+  </section>
+
+  <section id="productos" class="section">
+    <h2>Categorías</h2>
+    <input type="text" id="searchBar" class="search-bar" placeholder="Buscar producto..." oninput="searchProducts()">
+    <select id="categoryFilter" onchange="filterProducts()">
+      <option value="all">Todas</option>
+      <option value="Belleza">Belleza</option>
+      <option value="Hogar">Hogar</option>
+      <option value="Plásticos">Plásticos</option>
+      <option value="Baño">Baño</option>
+      <option value="Mascotas">Mascotas</option>
+      <option value="Ferretería">Ferretería</option>
+      <option value="Vidrio">Vidrio</option>
+      <option value="Cocina">Cocina</option>
+      <option value="Calzado">Calzado</option>
+      <option value="Jardinería">Jardinería</option>
+      <option value="Pesca">Pesca</option>
+      <option value="Electrodomésticos">Electrodomésticos</option>
+    </select>
+
+    <div class="product" data-category="Belleza" data-name="Labial Brillante">
+      <h3>Labial Brillante</h3>
+      <p>Categoría: Belleza</p>
+      <button onclick="addToCart('Labial Brillante')">Agregar al carrito</button>
+    </div>
+
+    <!-- Otros productos aquí -->
+
+  </section>
+
+  <section id="carrito" class="section">
+    <h2>Carrito de Compras</h2>
+    <div id="cartItems"></div>
+    <button onclick="sendToWhatsApp()">Finalizar Pedido por WhatsApp</button>
+  </section>
+
+  <section id="contacto" class="section">
+    <h2>Contáctanos</h2>
+    <p>WhatsApp: +505 5796 8642</p>
+    <p>Instagram: @dollar_express</p>
+    <p>Dirección: León, Nicaragua</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Dollar Express
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
